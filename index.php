@@ -15,24 +15,26 @@ require_once 'veryfication.php';
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <div class="form">
         <label for="name">Name
-        <input type="text" name="name" value="<?php echo $name ?>"></label>
-        <span class="error">* <?php echo $nameErr;?></span>
+        <input type="text" name="name" value="<?php echo  htmlspecialchars($name) ?>"></label>
+        <span class="error">* <?php if ($nameErr) echo htmlspecialchars($nameErr); ?></span>
     </div>
     <div class="form">
         <label for="email">Email
-        <input type="text" name="email" value="<?php echo $email ?>"></label>
-        <span class="error">* <?php echo $emailErr;?></span>
+        <input type="text" name="email" value="<?php echo  htmlspecialchars($email) ?>"></label>
+        <span class="error">* <?php if($emailErr) echo htmlspecialchars($emailErr);?></span>
+        <?php endif ?>
     </div>
     <div class="form">
         <label for="phone">Phone
-        <input type="text" name="phone" value="<?php echo $phone ?>"></label>
-        <span class="error">* <?php echo $phoneErr;?></span>
+        <input type="text" name="phone" value="<?php echo  htmlspecialchars($phone) ?>"></label>
+        <span class="error">* <?php if($phoneErr) echo htmlspecialchars($phoneErr);?></span>
+        <?php endif ?>
     </div>
     <div class="form">
         Your message
     </div>
     <div class="form">
-        <textarea name="message" rows="5" cols="27"><?php echo $message ?></textarea>
+        <textarea name="message" rows="5" cols="27">* <?php if($emailErr)  echo htmlspecialchars($message) ?></textarea>
     </div>
 
         <button type="submit">Отправить</button>
