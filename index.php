@@ -22,19 +22,17 @@ require_once 'veryfication.php';
         <label for="email">Email
         <input type="text" name="email" value="<?php echo  htmlspecialchars($email) ?>"></label>
         <span class="error">* <?php if($emailErr) echo htmlspecialchars($emailErr);?></span>
-        <?php endif ?>
     </div>
     <div class="form">
         <label for="phone">Phone
         <input type="text" name="phone" value="<?php echo  htmlspecialchars($phone) ?>"></label>
         <span class="error">* <?php if($phoneErr) echo htmlspecialchars($phoneErr);?></span>
-        <?php endif ?>
     </div>
     <div class="form">
         Your message
     </div>
     <div class="form">
-        <textarea name="message" rows="5" cols="27">* <?php if($emailErr)  echo htmlspecialchars($message) ?></textarea>
+        <textarea name="message" rows="5" cols="27">* <?php if($emailErr)  echo htmlspecialchars($message); ?></textarea>
     </div>
 
         <button type="submit">Отправить</button>
